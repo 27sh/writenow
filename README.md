@@ -10,6 +10,6 @@
 
 
 
-시연 영상 :
+시연 영상 : https://drive.google.com/file/d/1i0HW6Tf3trAlpGey9o0Js-K1eHeQ9Tsv/view?usp=sharing
 
 발표 ppt :
