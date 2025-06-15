@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Write Now - 로그인</title>
+    <script src="/js/login.js" defer></script>
+    <style>
+        @font-face {
+            font-family: 'GowunBatang-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            width: 1440px;
+            background-color: #D6CFC5;
+            margin: 0 auto;
+            font-family: 'GowunBatang-Regular', sans-serif;
+        }
+
+        #main-container {
+            width: 850px;
+            height: 1024px;
+            background-color: #F7F3F0;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #container-inline {
+            width: 788px;
+            height: 970px;
+            border: solid 1px #6B5858;
+            position: relative;
+        }
+
+        #title {
+            width: fit-content;
+            font-size: 64px;
+            font-weight: bolder;
+            color: #6B5858;
+            border-bottom: 7px double #6B5858;
+            padding-bottom: 5px;
+            margin: 100px auto;
+        }
+
+        #contain-over {
+            width: 1000px;
+            height: 500px;
+            background-color: #F7F3F0;
+            position: absolute;
+            top: 58%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        #login-box {
+        display: flex;
+        align-items: flex-start; /* 상단 정렬 */
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+
+    #login-right {
+        display: flex;
+        flex-direction: column; /* 수직 정렬 */
+    }
+
+    .textBox {
+        width: 280px;
+        height: 50px;
+        background-color: #E9E5E0;
+        color: #6B5858;
+        font-size: 15px;
+        display: block;
+        margin: 10px 10px;
+        border: none;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+
+    #login-btn {
+        background-color: #6B5858;
+        border-radius: 25px;
+        border: none;
+        box-sizing: border-box;
+        width: 120px;
+        height: 120px;
+        color: #FFFFFF;
+        font-size: 15px;
+        font-weight: bold;
+        align-self: center;
+    }
+
+
+
+        input::placeholder {
+            color: #BFB7AA;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+
+        #dear-text {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: #6B5858;
+    font-size: 16px;
+    text-align: right;
+    line-height: 1.4;
+    align-items: center;
+}
+
+    </style>
+</head>
+<body>
+<div id="main-container">
+    <div id="container-inline">
+        <div id="title">로그인</div>
+        <div id="contain-over">
+            <form id="login-box" method="post" action="/login">
+                <div id="login-right">
+                    <input type="text" name="username" placeholder="아이디" class="textBox" required>
+                    <input type="password" name="password" placeholder="비밀번호" class="textBox" required>
+                </div>
+                <button type="submit" id="login-btn">로그인</button>
+            </form>
+
+            <div id="dear-text">
+                <p>Dear. </p>
+                <p id="today-date"></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

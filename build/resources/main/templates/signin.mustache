@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Now</title>
+    <script src="/js/signin.js" defer></script>
+</head>
+<style>
+    @font-face {
+        font-family: 'GowunBatang-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        width: 1440px;
+        background-color: #D6CFC5;
+        margin: 0 auto;
+        font-family: 'GowunBatang-Regular';
+    }
+
+    #main-container {
+        width: 850px;
+        height: 1024px;
+        background-color: #F7F3F0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #container-inline {
+        width: 788px;
+        height: 970px;
+        border: solid 1px #6B5858;
+    }
+
+    #title {
+        width: fit-content;
+        font-size: 64px;
+        font-weight: bolder;
+        color: #6B5858;
+        border-bottom-width: 7px;
+        border-bottom-style: double;
+        border-bottom-color: #6B5858;
+        padding-bottom: 5px;
+        margin: 100px auto 350px;
+    }
+
+    .text {
+        width: 250px;
+        font-size: 32px;
+        font-weight: normal;
+        color: #6B5858;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #6B5858;
+        padding-bottom: 5px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 15px;
+    }
+
+    #contain-over {
+        width: 1000px;
+        height: 500px;
+        background-color: #F7F3F0;
+        position: relative;
+        top: -700px;
+        left: 45%;
+        transform: translateX(-50%);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    #login-right {
+        margin-top: 30px;
+    }
+
+    #login-box {
+        position: absolute;
+        top: 20px;  /* 바닥에서 20px 떨어짐 */
+        left: 50px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+
+    }
+    .textBox {
+        width: 280px;
+        height: 50px;
+        background-color: #E9E5E0;
+        color: #6B5858;
+        font-size: 15px;
+        display: block;
+        margin: 10px 10px;
+        border: none;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+
+    input::placeholder {
+        color: #BFB7AA;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    #login-btn {
+        background-color: #6B5858;
+        border-radius: 25px;
+        border: none;
+        box-sizing: border-box;
+        width: 110px;
+        height: 110px;
+        color: #FFFFFF;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    #dear-box {
+        position: absolute;
+        bottom: 20px;  /* 바닥에서 20px 떨어짐 */
+        right: 50px;   /* 오른쪽에서 20px 떨어짐 */
+    }
+
+    #dear-text {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        color: #6B5858;
+        font-size: 16px;
+        text-align: right;
+        line-height: 1.4;
+        align-items: center;
+    }
+
+    #name {
+        margin-left: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        color: #6B5858;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #input-name {
+        border: none;
+        border-bottom: 1px solid #6B5858;
+        background-color: transparent;
+        font-family: 'GowunBatang-Regular';
+        font-size: 15px;
+        color: #6B5858;
+        width: 100px;
+        padding: 3px 5px;
+    }
+
+    #input-name:focus {
+        outline: none;
+    }
+
+
+
+</style>
+
+<body>
+<div id="main-container">
+    <div id="container-inline">
+        <div id="title">회원가입</div>
+    </div>
+</div>
+<div id="contain-over">
+    <div id="login-box">
+        <div id="login-right">
+            <input type="text" id="input-id" placeholder="아이디" class="textBox">
+            <div id="id-warning" style="color: red; font-size: 14px; margin-left: 12px;"></div>
+            <input type="password" id="input-pw" placeholder="비밀번호" class="textBox">
+            <div id="name">
+                From. <input type="text" id="input-name" placeholder="닉네임">
+            </div>
+        </div>
+        <div id="login-left">
+            <button id="login-btn">회원가입</button>
+        </div>
+    </div>
+
+    <div id="dear-box">
+        <div id="dear-text">
+            <p>Dear. </p>
+            <p id="today-date"></p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

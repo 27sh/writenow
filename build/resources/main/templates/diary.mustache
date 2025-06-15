@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Write Now</title>
+    <link rel="stylesheet" href="/css/diary.css">
+    <script src="/js/diary.js" defer></script>
+</head>
+<body>
+<div class="top-line"></div>
+<div id="song-container">
+    <img src="{{song.cover}}" alt="album cover" style="width: 120px; height: 120px;">
+
+    <!-- 재생바 (디자인용) -->
+    <div id="progress-bar" style="margin: 5px 0; width: 90%; height: 5px; background-color: #ddd; position: relative;">
+        <div id="progress" style="width: 0%; height: 5px; background-color: #e48a95;"></div>
+        <div id="progress-thumb" style="position: absolute; left: 0%; top: -4px; width: 10px; height: 10px; background-color: white; border-radius: 50%; border: 1px solid #aaa;"></div>
+    </div>
+
+    <!-- 제목 - 가수 -->
+    <div style="font-size: 12px; color: white; margin-top: 5px;">
+        {{song.stitle}} - {{song.singer}}
+    </div>
+
+    <!-- 시간 표시 -->
+    <div style="font-size: 11px; color: white; margin-top: 5px;">
+        <span id="play-toggle" style="cursor: pointer;">⏸</span>
+        <span id="current-time">0:00</span> / {{formattedStime}}
+    </div>
+
+</div>
+<audio id="audio-player" src="{{audioPath}}" autoplay></audio>
+<div class="mp3-img"></div>
+<div class="note-img">
+    <div class="note-title">오늘의 기분</div>
+    <div class="note-options">
+        <span class="emoji {{#isEmoteSmile}}selected{{/isEmoteSmile}}">😆</span>
+        <span class="emoji {{#isEmoteNeutral}}selected{{/isEmoteNeutral}}">😐</span>
+        <span class="emoji {{#isEmoteSleep}}selected{{/isEmoteSleep}}">😴</span>
+    </div>
+    <div class="note-title" style="margin-top: 30px;">오늘의 날씨</div>
+    <div class="note-options">
+        <span class="emoji {{#isWeatherSunny}}selected{{/isWeatherSunny}}">☀️</span>
+        <span class="emoji {{#isWeatherCloud}}selected{{/isWeatherCloud}}">☁️</span>
+        <span class="emoji {{#isWeatherRain}}selected{{/isWeatherRain}}">🌧️</span>
+    </div>
+</div>
+
+<div id="main-container">
+    <div id="container-inline">
+        <div id="title">{{diary.dtitle}}</div>
+
+        <textarea id="input-text" placeholder="글 내용을 작성해주세요" readonly>{{diary.post}}</textarea>
+
+        <div id="diary-date">{{diary.date}}</div>
+    </div>
+</div>
+</body>
+</html>
